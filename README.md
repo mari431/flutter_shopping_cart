@@ -1,6 +1,6 @@
 # flutter_shopping_cart
 
-A new Flutter shopping cart  project using GETX.
+A new Flutter shopping cart project for learning using GETX.
 
 ## Output
 
