@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,7 +5,6 @@ import 'package:get/get.dart';
 
 import '../controllers/controller.dart';
 import '../model/simage.model.dart';
-import 'detail_screen.dart';
 
 class ShoppingListView extends StatefulWidget {
   @override
@@ -26,7 +23,7 @@ class _ShoppingListViewState extends State<ShoppingListView> {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 600,
+        height: 599,
         child: FutureBuilder<List<SImage>>(
           future: _mcontroller.futureImages,
           builder: (context, snapshot) {
@@ -43,20 +40,7 @@ class _ShoppingListViewState extends State<ShoppingListView> {
                     children: [
                       InkWell(
                         onTap: (){
-                          print('clicked! ${magazine.name}');
-
                           _mcontroller.gotoDetailScreen(context,magazine.assetImage,magazine.name);
-
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => DetailScreen(
-                          //       assetImage: '${magazine.assetImage}',
-                          //       name: '${magazine.name}',
-                          //     ),
-                          //   ),
-                          // );
-
                         },
                         child: Stack(
                           alignment: Alignment.bottomCenter,
@@ -131,7 +115,7 @@ class _ShoppingListViewState extends State<ShoppingListView> {
                 },
               );
             } else {
-              return Center(child: Text('No magazines found'));
+              return Center(child: Text('No list found'));
             }
           },
         ),
